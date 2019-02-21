@@ -160,7 +160,7 @@ class Client {
    * @param {Function} fn Function to execute
    * @param {*} delay Time to wait between executions
    * @param  {...any} args Arguments for the function
-   * @returns {Timeout}
+   * @returns {Interval}
    */
   setInterval(fn, delay, ...args) {
     const interval = setInterval(fn, delay, ...args);
@@ -170,7 +170,7 @@ class Client {
 
   /**
    * Clears an interval
-   * @param {Timeout} interval Interval to cancel
+   * @param {Interval} interval Interval to cancel
    * @public
    */
   clearInterval(interval) {

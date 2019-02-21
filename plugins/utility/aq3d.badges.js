@@ -60,7 +60,7 @@ class Badges extends Plugin {
   /**
    * Clears an interval
    * @param {Client} client Client instance
-   * @param {Timeout} interval Interval to clear
+   * @param {Interval} interval Interval to clear
    */
   clear(client, interval) {
     client.clearInterval(interval);
