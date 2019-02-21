@@ -46,12 +46,12 @@ class Copy extends Plugin {
    * @public
    */
   copy(client, username) {
+    this._copy = !this._copy;
+
     if (!username) return;
 
     const player = client.player.room.getPlayerByKey(username);
     if (player) this._target = player.uoName;
-
-    this._copy = !this._copy;
   }
 
   /**

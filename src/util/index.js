@@ -1,5 +1,4 @@
 const chalk = require('chalk');
-const notifier = require('node-notifier');
 const { version } = require('../../package.json');
 
 class Util {
@@ -32,7 +31,7 @@ class Util {
       '     ▐▓████          ▌████░',
       '     ┘▀██╟          ▌██▀┌',
       '       `▀╙          ░▀',
-    ].join('\n')), `\n            ${chalk.whiteBright(`v${version}`)}\n`);
+    ].join('\n')), `\n            ${chalk.grey(`v${version}`)}\n`);
   }
 
   /**
