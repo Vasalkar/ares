@@ -155,7 +155,6 @@ class Client {
     return this.protocol.general(message);
   }
 
-
   /**
    * Sets an interval
    * @param {Function} fn Function to execute
@@ -189,7 +188,7 @@ class Client {
       await this.remote.end();
       await this.socket.end();
       this._destroy();
-      this.server.removeConnection(this);
+      this.server.onConnectionClose(this);
     }
   }
 

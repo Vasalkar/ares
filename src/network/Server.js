@@ -73,8 +73,7 @@ class TCPServer extends EventEmitter {
   static spawn() {
     const server = Config.get('ares.server');
     const tcpServer = new TCPServer(server, this);
-    return tcpServer.setPrefix()
-      .listen();
+    return tcpServer.setPrefix().listen();
   }
 
   /**
@@ -105,6 +104,7 @@ class TCPServer extends EventEmitter {
   /**
    * Handles new incoming connections
    * @param {net.Socket} socket Connection socket
+   * @private
    */
   async _onConnection(socket) {
     socket = new PromiseSocket(socket);
@@ -144,8 +144,9 @@ class TCPServer extends EventEmitter {
   /**
    * Removes the client from the connections map
    * @param {Client} client Client to remove
+   * @public
    */
-  removeConnection(client) {
+  onConnectionClose(client) {
     if (this.connections.has(client)) {
       this.connections.delete(client);
       this.count -= 1;

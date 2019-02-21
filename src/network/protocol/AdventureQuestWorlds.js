@@ -94,11 +94,11 @@ class AdventureQuestWorlds extends Protocol {
 
   /**
    * Sends a message to the server
-   * @param {string} message Message to send
+   * @param {string} text Message text to send
    * @returns {Promise<void>}
    */
-  message(message) {
-    return this.client.remoteWrite(`%xt%zm%message%1%${message}%zone%`);
+  message(text) {
+    return this.client.remoteWrite(`%xt%zm%message%1%${text}%zone%`);
   }
 
   /**

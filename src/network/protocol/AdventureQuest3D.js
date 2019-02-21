@@ -29,7 +29,7 @@ class AdventureQuest3D extends Protocol {
    * @public
    */
   constructPacket(packet) {
-    packet = xor(packet);
+    xor(packet);
     return new JsonPacket(packet.slice(2));
   }
 
@@ -94,12 +94,12 @@ class AdventureQuest3D extends Protocol {
 
   /**
    * Sends a message to the server
-   * @param {string} message Message to send
+   * @param {string} text Message text to send
    * @returns {Promise<void>}
    */
-  message(message) {
+  message(text) {
     return this.client.remoteWrite({
-      msg: message,
+      msg: text,
       channelID: this.client.player.channel,
       type: 4,
       cmd: 1,

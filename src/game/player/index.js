@@ -1,3 +1,4 @@
+const { PROTOCOL_TYPE } = require('../../util/Constants');
 const Room = require('../Room');
 
 class Player {
@@ -47,12 +48,12 @@ class Player {
 
   /**
    * Sends a message to the server
-   * @param {string} message Message to send
+   * @param {string} text Message text to send
    * @returns {Promise<void>}
    * @public
    */
-  message(message) {
-    return this._client.protocol.message(message);
+  message(text) {
+    return this._client.protocol.message(text);
   }
 
   /**
